@@ -3,6 +3,8 @@
 
 UBUNTU_COUNT = 1
 
+Dir.mkdir('.vagrant_shared') unless Dir.exist?('.vagrant_shared')
+
 Vagrant.configure("2") do |config|
 
   config.vm.provider "virtualbox"
