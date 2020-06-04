@@ -23,12 +23,11 @@ Vagrant.configure("2") do |config|
         ubuntu.vm.provider :virtualbox do |v|
           v.gui = false
           v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
-          v.customize ["modifyvm", :id, "--memory", 512]
+          v.customize ["modifyvm", :id, "--memory", 2048]
           v.customize ["modifyvm", :id, "--name", hostname]
         end
         ubuntu.vm.provision "shell", inline: "echo \"IPs: $(hostname -I)\"", keep_color: true
       end
     end
   end
-
 end
